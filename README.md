@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/musifybeats-logo.png" alt="MusifyBeats Logo" width="200"/>
+  <img src="assets/musifybeats-logo1.png" alt="MusifyBeats Logo" width="200"/>
 </p>
 
 # MusifyBeats
