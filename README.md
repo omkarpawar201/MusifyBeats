@@ -9,6 +9,6 @@ MusifyBeats is a modern music streaming web application designed to deliver high
 - Playlist creation and management
 - Streaming high-quality audio tracks seamlessly
 - Microservices architecture enabling modular and scalable development
-- Secure and performant backend using JWT and C# microservices
+- Secure and performant backend using .Net Core, Java and C# microservices
 - Data persistence managed with SQL databases
 - Cloud deployment on Azure for availability and scalability
