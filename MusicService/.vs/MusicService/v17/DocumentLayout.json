@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\MusicService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{836C4DCF-93F2-4342-9E4C-E12900EEA002}|MusicService\\MusicService.csproj|e:\\omkar\\cdac\\github\\musifybeats\\musicservice\\musicservice\\controllers\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{836C4DCF-93F2-4342-9E4C-E12900EEA002}|MusicService\\MusicService.csproj|solutionrelative:musicservice\\controllers\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{836C4DCF-93F2-4342-9E4C-E12900EEA002}|MusicService\\MusicService.csproj|e:\\omkar\\cdac\\github\\musifybeats\\musicservice\\musicservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{836C4DCF-93F2-4342-9E4C-E12900EEA002}|MusicService\\MusicService.csproj|solutionrelative:musicservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{836C4DCF-93F2-4342-9E4C-E12900EEA002}|MusicService\\MusicService.csproj|e:\\omkar\\cdac\\github\\musifybeats\\musicservice\\musicservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{836C4DCF-93F2-4342-9E4C-E12900EEA002}|MusicService\\MusicService.csproj|solutionrelative:musicservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\MusicService\\MusicService\\appsettings.json",
+              "RelativeDocumentMoniker": "MusicService\\appsettings.json",
+              "ToolTip": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\MusicService\\MusicService\\appsettings.json",
+              "RelativeToolTip": "MusicService\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-25T04:37:35.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MusicController.cs",
+              "DocumentMoniker": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\MusicService\\MusicService\\Controllers\\MusicController.cs",
+              "RelativeDocumentMoniker": "MusicService\\Controllers\\MusicController.cs",
+              "ToolTip": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\MusicService\\MusicService\\Controllers\\MusicController.cs",
+              "RelativeToolTip": "MusicService\\Controllers\\MusicController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAcwA8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T04:34:12.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\MusicService\\MusicService\\Program.cs",
+              "RelativeDocumentMoniker": "MusicService\\Program.cs",
+              "ToolTip": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\MusicService\\MusicService\\Program.cs",
+              "RelativeToolTip": "MusicService\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAkwB8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T04:32:01.454Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
