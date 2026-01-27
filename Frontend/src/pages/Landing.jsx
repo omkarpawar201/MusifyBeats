@@ -19,8 +19,13 @@ const Landing = () => {
             {/* Navigation */}
             <nav className="container mx-auto px-6 py-6 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <img src="/logo.png" alt="Musify Beats" className="w-10 h-10 rounded-full object-cover" />
-                    <span className="text-2xl font-display font-bold">
+                    {/* Logo Image */}
+                    <img
+                        src="/logo.png"
+                        alt="MUSIFYBEATS Logo"
+                        className="w-11 h-11 rounded-full object-cover shadow-md"
+                    />
+                    <span className="text-2xl font-display font-bold gradient-text">
                         MUSIFYBEATS
                     </span>
                 </div>
@@ -33,7 +38,7 @@ const Landing = () => {
                         Log in
                     </Link>
                     <Link to="/auth?mode=signup">
-                        <Button className="rounded-full px-6 btn-gradient font-bold hover:scale-105 transition-transform">
+                        <Button className="rounded-full px-6 btn-gradient font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/30">
                             Sign up
                         </Button>
                     </Link>
@@ -42,9 +47,11 @@ const Landing = () => {
 
             {/* Hero Section */}
             <section className="relative container mx-auto px-6 pt-20 md:pt-32 pb-24 text-center">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-primary/10 blur-[100px] rounded-full -z-10 opacity-50 pointer-events-none" />
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 tracking-tight animate-fade-in drop-shadow-sm">
+                {/* Background Glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 blur-[120px] rounded-full -z-10 opacity-60 pointer-events-none" />
+
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 tracking-tight animate-fade-in">
                     Feel the <span className="gradient-text">Rhythm</span>.<br />
                     Experience the <span className="gradient-text">Future</span>.
                 </h1>
@@ -64,7 +71,7 @@ const Landing = () => {
                     <Link to="/auth?mode=signup">
                         <Button
                             size="lg"
-                            className="rounded-full px-10 h-16 text-xl btn-gradient font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/25"
+                            className="rounded-full px-10 h-16 text-xl btn-gradient font-bold hover:scale-105 transition-transform shadow-xl shadow-primary/30"
                         >
                             Start Listening Free
                         </Button>
@@ -74,7 +81,7 @@ const Landing = () => {
                         <Button
                             variant="outline"
                             size="lg"
-                            className="rounded-full px-10 h-16 text-xl border-2 hover:bg-secondary/50 font-bold backdrop-blur-sm"
+                            className="rounded-full px-10 h-16 text-xl border-2 border-primary/40 hover:bg-primary/10 font-bold backdrop-blur-sm"
                         >
                             Explore Plans
                         </Button>
@@ -104,10 +111,10 @@ const Landing = () => {
                     ].map((feature, index) => (
                         <div
                             key={index}
-                            className="glass p-8 rounded-2xl hover:bg-secondary/40 transition-colors animate-fade-in"
+                            className="glass p-8 rounded-2xl hover:bg-primary/5 transition-colors animate-fade-in"
                             style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                         >
-                            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center mb-6">
                                 <feature.icon className="w-6 h-6 text-primary" />
                             </div>
                             <h3 className="text-xl font-bold mb-3">
@@ -123,7 +130,7 @@ const Landing = () => {
 
             {/* Footer */}
             <footer className="container mx-auto px-6 py-10 text-center border-t border-border mt-10">
-                <h3 className="text-2xl font-display font-bold mb-2 text-brand-gradient">
+                <h3 className="text-2xl font-display font-bold mb-2 gradient-text">
                     MUSIFYBEATS
                 </h3>
 
