@@ -18,9 +18,9 @@ namespace PlaylistService.Controllers
             _context = context;
         }
 
-        // USER: Create playlist
+        // ➕ CREATE PLAYLIST
         [HttpPost]
-        public IActionResult CreatePlaylist([FromBody] string name)
+        public IActionResult Create(string name)
         {
             var email = User.FindFirstValue("sub");
 
@@ -32,40 +32,59 @@ namespace PlaylistService.Controllers
 
             _context.Playlists.Add(playlist);
             _context.SaveChanges();
-
             return Ok(playlist);
         }
 
-        // USER: Get own playlists
-        [HttpGet("my")]
-        public IActionResult MyPlaylists()
+        // ADD SONG
+        [HttpPost("{playlistId}/songs/{songId}")]
+        public IActionResult AddSong(int playlistId, int songId)
         {
             var email = User.FindFirstValue("sub");
-            var playlists = _context.Playlists
-                                    .Where(p => p.OwnerEmail == email)
-                                    .ToList();
-            return Ok(playlists);
+
+            var playlist = _context.Playlists.Find(playlistId);
+            if (playlist == null || playlist.OwnerEmail != email)
+                return Forbid();
+
+            _context.PlaylistSongs.Add(new PlaylistSong
+            {
+                PlaylistId = playlistId,
+                SongId = songId
+            });
+
+            _context.SaveChanges();
+            return Ok("Song added");
         }
 
-        // ADMIN: Get all playlists
-        [Authorize(Roles = "ADMIN")]
-        [HttpGet("all")]
-        public IActionResult AllPlaylists()
+        // REMOVE SONG
+        [HttpDelete("{playlistId}/songs/{songId}")]
+        public IActionResult RemoveSong(int playlistId, int songId)
         {
-            return Ok(_context.Playlists.ToList());
+            var email = User.FindFirstValue("sub");
+
+            var ps = _context.PlaylistSongs
+                .FirstOrDefault(p => p.PlaylistId == playlistId && p.SongId == songId);
+
+            if (ps == null) return NotFound();
+
+            _context.PlaylistSongs.Remove(ps);
+            _context.SaveChanges();
+            return Ok("Song removed");
         }
 
-        // ADMIN: Delete playlist
-        [Authorize(Roles = "ADMIN")]
+        // DELETE PLAYLIST
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult DeletePlaylist(int id)
         {
+            var email = User.FindFirstValue("sub");
             var playlist = _context.Playlists.Find(id);
+
             if (playlist == null) return NotFound();
+
+            if (playlist.OwnerEmail != email && !User.IsInRole("ADMIN"))
+                return Forbid();
 
             _context.Playlists.Remove(playlist);
             _context.SaveChanges();
-
             return Ok("Playlist deleted");
         }
     }
