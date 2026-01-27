@@ -1,0 +1,54 @@
+[
+  {
+    "ContainingType": "PlaylistService.Controllers.PlaylistController",
+    "Method": "CreatePlaylist",
+    "RelativePath": "api/playlists",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlaylistService.Controllers.PlaylistController",
+    "Method": "Delete",
+    "RelativePath": "api/playlists/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlaylistService.Controllers.PlaylistController",
+    "Method": "AllPlaylists",
+    "RelativePath": "api/playlists/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlaylistService.Controllers.PlaylistController",
+    "Method": "MyPlaylists",
+    "RelativePath": "api/playlists/my",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

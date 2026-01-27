@@ -27,7 +27,7 @@ namespace MusicService
                         IssuerSigningKey = new SymmetricSecurityKey(
                             Encoding.UTF8.GetBytes(jwtSecret)
                         ),
-                        ClockSkew = TimeSpan.Zero
+                        ClockSkew = TimeSpan.Zero,
 
                         RoleClaimType = "role"
                     };
