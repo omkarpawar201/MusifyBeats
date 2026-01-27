@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|e:\\omkar\\cdac\\github\\musifybeats\\playlistservice\\playlistservice\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|solutionrelative:playlistservice\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|e:\\omkar\\cdac\\github\\musifybeats\\playlistservice\\playlistservice\\models\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|solutionrelative:playlistservice\\models\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|e:\\omkar\\cdac\\github\\musifybeats\\playlistservice\\playlistservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|solutionrelative:playlistservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,8 +11,24 @@
       "RelativeMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|solutionrelative:playlistservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|e:\\omkar\\cdac\\github\\musifybeats\\playlistservice\\playlistservice\\models\\playlistsong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|solutionrelative:playlistservice\\models\\playlistsong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Migrations\\20260127075926_AddPlaylistSongs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PlaylistService\\Migrations\\20260127075926_AddPlaylistSongs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|e:\\omkar\\cdac\\github\\musifybeats\\playlistservice\\playlistservice\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|solutionrelative:playlistservice\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|e:\\omkar\\cdac\\github\\musifybeats\\playlistservice\\playlistservice\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|solutionrelative:playlistservice\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|e:\\omkar\\cdac\\github\\musifybeats\\playlistservice\\playlistservice\\models\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|solutionrelative:playlistservice\\models\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C386D127-B838-4BC0-8A0A-644AD34E4810}|PlaylistService\\PlaylistService.csproj|e:\\omkar\\cdac\\github\\musifybeats\\playlistservice\\playlistservice\\migrations\\20260126040119_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,7 +50,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "20260127075926_AddPlaylistSongs.cs",
+              "DocumentMoniker": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Migrations\\20260127075926_AddPlaylistSongs.cs",
+              "RelativeDocumentMoniker": "PlaylistService\\Migrations\\20260127075926_AddPlaylistSongs.cs",
+              "ToolTip": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Migrations\\20260127075926_AddPlaylistSongs.cs",
+              "RelativeToolTip": "PlaylistService\\Migrations\\20260127075926_AddPlaylistSongs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T07:59:27.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlaylistSong.cs",
+              "DocumentMoniker": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Models\\PlaylistSong.cs",
+              "RelativeDocumentMoniker": "PlaylistService\\Models\\PlaylistSong.cs",
+              "ToolTip": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Models\\PlaylistSong.cs",
+              "RelativeToolTip": "PlaylistService\\Models\\PlaylistSong.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAgwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T07:53:25.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "20260126040119_InitialCreate.cs",
               "DocumentMoniker": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Migrations\\20260126040119_InitialCreate.cs",
               "RelativeDocumentMoniker": "PlaylistService\\Migrations\\20260126040119_InitialCreate.cs",
@@ -54,65 +88,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\appsettings.json",
               "RelativeDocumentMoniker": "PlaylistService\\appsettings.json",
               "ToolTip": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\appsettings.json",
               "RelativeToolTip": "PlaylistService\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-26T03:58:05.685Z"
+              "WhenOpened": "2026-01-26T03:58:05.685Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "PlaylistService\\Data\\AppDbContext.cs",
               "ToolTip": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Data\\AppDbContext.cs",
               "RelativeToolTip": "PlaylistService\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T03:53:47.915Z"
+              "WhenOpened": "2026-01-26T03:53:47.915Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "PlaylistController.cs",
               "DocumentMoniker": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Controllers\\PlaylistController.cs",
               "RelativeDocumentMoniker": "PlaylistService\\Controllers\\PlaylistController.cs",
               "ToolTip": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Controllers\\PlaylistController.cs",
               "RelativeToolTip": "PlaylistService\\Controllers\\PlaylistController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAQAAAAAYwCUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-26T03:34:55.421Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Playlist.cs",
               "DocumentMoniker": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Models\\Playlist.cs",
               "RelativeDocumentMoniker": "PlaylistService\\Models\\Playlist.cs",
               "ToolTip": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Models\\Playlist.cs",
               "RelativeToolTip": "PlaylistService\\Models\\Playlist.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-26T03:34:12.404Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Program.cs",
               "RelativeDocumentMoniker": "PlaylistService\\Program.cs",
               "ToolTip": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\PlaylistService\\PlaylistService\\Program.cs",
               "RelativeToolTip": "PlaylistService\\Program.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAQwFIAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T03:31:44.323Z"
+              "WhenOpened": "2026-01-26T03:31:44.323Z",
+              "EditorCaption": ""
             }
           ]
         }
