@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MUSIFYBEATS Design System - Modern Glassmorphism Dark Theme */
+
+@layer base {
+  :root {
+    /* Light Theme - Soft White / Light Gray Background */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Vibrant Purple */
+    --primary: 270 95% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary - Light lavender */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent - Pink/Magenta */
+    --accent: 330 85% 60%;
+    --accent-foreground: 222 47% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 280 85% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients for Light Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(270, 95%, 60%) 0%, hsl(330, 85%, 60%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(240, 10%, 96%) 0%, hsl(240, 10%, 90%) 100%);
+    --gradient-glow: linear-gradient(135deg, hsl(270, 95%, 50%) 0%, hsl(330, 85%, 50%) 100%);
+
+    /* Glass effect variables for Light Mode */
+    --glass-bg: hsla(0, 0%, 100%, 0.7);
+    --glass-border: hsla(240, 5.9%, 90%, 0.5);
+    --glass-blur: blur(20px);
+
+    /* Sidebar - Light */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 280 85% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 40% 96.1%;
+    --sidebar-accent-foreground: 222 47% 11.2%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 280 85% 60%;
+  }
+
+  .dark {
+    /* Dark Theme - Deep Navy / Charcoal Background */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary - Neon Purple */
+    --primary: 270 95% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Deep Blue */
+    --secondary: 240 60% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    /* Accent - Pink/Magenta */
+    --accent: 330 85% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 10% 18%;
+    --input: 240 10% 15%;
+    --ring: 270 95% 60%;
+
+    /* Custom gradients for Dark Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(270, 95%, 60%) 0%, hsl(330, 85%, 60%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(240, 60%, 20%) 0%, hsl(270, 50%, 15%) 100%);
+    --gradient-glow: linear-gradient(135deg, hsl(270, 95%, 60%) 0%, hsl(200, 95%, 50%) 50%, hsl(330, 85%, 60%) 100%);
+
+    /* Glass effect variables for Dark Mode */
+    --glass-bg: hsla(240, 10%, 10%, 0.6);
+    --glass-border: hsla(0, 0%, 100%, 0.1);
+    --glass-blur: blur(20px);
+
+    /* Sidebar - Dark */
+    --sidebar-background: 240 10% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 270 95% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 10% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 10% 15%;
+    --sidebar-ring: 270 95% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+
+  /* Glassmorphism card effect */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-hover {
+    @apply glass transition-all duration-300;
+  }
+
+  .glass-hover:hover {
+    background: hsla(240, 10%, 12%, 0.7);
+    border-color: hsla(0, 0%, 100%, 0.15);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gradient button */
+  .btn-gradient {
+    background: var(--gradient-primary);
+    @apply text-white font-semibold px-6 py-3 rounded-full transition-all duration-300;
+  }
+
+  .btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px -10px hsla(270, 95%, 60%, 0.5);
+  }
+
+  /* Animated background gradient */
+  .animated-gradient {
+    background: linear-gradient(-45deg,
+        hsl(270, 95%, 15%),
+        hsl(240, 60%, 10%),
+        hsl(330, 85%, 15%),
+        hsl(200, 95%, 15%));
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: 0 0 40px -10px hsl(270, 95%, 60%);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 40px -10px hsl(330, 85%, 60%);
+  }
+
+  /* Music player bar */
+  .player-bar {
+    @apply glass fixed bottom-0 left-0 right-0 z-50;
+    border-top: 1px solid var(--glass-border);
+  }
+
+  /* Scrollbar styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(240, 10%, 8%);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(240, 10%, 20%);
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(240, 10%, 30%);
+  }
+
+  /* Image hover zoom effect */
+  .img-hover-zoom {
+    @apply overflow-hidden;
+  }
+
+  .img-hover-zoom img {
+    @apply transition-transform duration-500;
+  }
+
+  .img-hover-zoom:hover img {
+    transform: scale(1.1);
+  }
+}
+
+@layer utilities {
+
+  /* Animation keyframes */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+
+  /* Text shadow for glow effect */
+  .text-glow {
+    text-shadow: 0 0 30px hsla(270, 95%, 60%, 0.5);
+  }
+}
