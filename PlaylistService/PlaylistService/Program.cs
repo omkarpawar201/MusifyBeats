@@ -13,7 +13,7 @@ namespace PlaylistService
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            var jwtSecret = "musifybeats-super-secret-key-256-bit-length-123456";
+            var jwtSecret = builder.Configuration["Jwt:Secret"];
 
             builder.Services
                 .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -83,7 +83,20 @@ namespace PlaylistService
                 )
             );
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
+
             var app = builder.Build();
+
+            app.UseCors("AllowAll");
 
             if (app.Environment.IsDevelopment())
             {

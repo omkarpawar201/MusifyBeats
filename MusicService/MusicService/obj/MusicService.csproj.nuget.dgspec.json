@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\MusicService\\MusicService\\MusicService.csproj": {}
+    "E:\\Omkar\\CDAC\\CDAC Project\\MusicService\\MusicService\\MusicService.csproj": {}
   },
   "projects": {
-    "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\MusicService\\MusicService\\MusicService.csproj": {
+    "E:\\Omkar\\CDAC\\CDAC Project\\MusicService\\MusicService\\MusicService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\MusicService\\MusicService\\MusicService.csproj",
+        "projectUniqueName": "E:\\Omkar\\CDAC\\CDAC Project\\MusicService\\MusicService\\MusicService.csproj",
         "projectName": "MusicService",
-        "projectPath": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\MusicService\\MusicService\\MusicService.csproj",
+        "projectPath": "E:\\Omkar\\CDAC\\CDAC Project\\MusicService\\MusicService\\MusicService.csproj",
         "packagesPath": "C:\\Users\\omkar\\.nuget\\packages\\",
-        "outputPath": "E:\\Omkar\\CDAC\\Github\\MusifyBeats\\MusicService\\MusicService\\obj\\",
+        "outputPath": "E:\\Omkar\\CDAC\\CDAC Project\\MusicService\\MusicService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

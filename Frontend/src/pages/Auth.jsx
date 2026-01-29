@@ -22,7 +22,12 @@ const Auth = () => {
     useEffect(() => {
         // Check if user is already logged in
         if (authService.isAuthenticated()) {
-            navigate("/home");
+            const user = authService.getCurrentUser();
+            if (user?.role?.toLowerCase() === "admin") {
+                navigate("/admin");
+            } else {
+                navigate("/home");
+            }
         }
     }, [navigate]);
 
@@ -52,12 +57,17 @@ const Auth = () => {
                 });
                 setIsSignUp(false);
             } else {
-                await authService.login(email, password);
+                const response = await authService.login(email, password);
                 toast({
                     title: "Welcome back!",
                     description: "Logged in successfully.",
                 });
-                navigate("/home");
+
+                if (response.user?.role?.toLowerCase() === "admin") {
+                    navigate("/admin");
+                } else {
+                    navigate("/home");
+                }
             }
         } catch (error) {
             console.error(error);

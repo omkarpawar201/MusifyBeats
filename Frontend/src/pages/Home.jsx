@@ -4,7 +4,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import { Play, ChevronRight, Loader2 } from "lucide-react";
 import { authService } from "@/services/authService";
 import { musicService } from "@/services/musicService";
-import { mockTrending, mockNewReleases } from "@/lib/mockData";
+import { usePlayer } from "@/context/PlayerContext";
 
 const Home = () => {
     const [user, setUser] = useState(null);
@@ -12,6 +12,7 @@ const Home = () => {
     const [newReleases, setNewReleases] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
+    const { playSong } = usePlayer();
 
     useEffect(() => {
         if (!authService.isAuthenticated()) {
@@ -22,17 +23,19 @@ const Home = () => {
 
         const fetchData = async () => {
             try {
-                const [trendingData, newReleasesData] = await Promise.all([
-                    musicService.getTrending(),
-                    musicService.getNewReleases()
-                ]);
-                setTrending(trendingData);
-                setNewReleases(newReleasesData);
+                // Fetch trending songs from real API
+                const trendingData = await musicService.getTrending();
+                console.log("Trending Data Fetched:", trendingData); // Debug log
+                setTrending(trendingData || []);
+                // Use trending as new releases for now
+                setNewReleases((trendingData || []).slice(0, 6));
             } catch (error) {
-                console.error("Failed to fetch music data, using fallback", error);
-                // Fallback to mock data
-                setTrending(mockTrending);
-                setNewReleases(mockNewReleases);
+                console.error("Failed to fetch music data:", error);
+                if (error.response) {
+                    console.error("Error Response:", error.response.status, error.response.data);
+                }
+                setTrending([]);
+                setNewReleases([]);
             } finally {
                 setLoading(false);
             }
@@ -48,7 +51,12 @@ const Home = () => {
         return "Good evening";
     };
 
-    const userName = user?.displayName || user?.email?.split("@")[0] || "there";
+    const handlePlay = (song, event) => {
+        event.stopPropagation(); // Prevent navigation if clicking card
+        playSong(song);
+    };
+
+    const userName = user?.displayName || user?.email?.split("@")[0];
 
     if (loading) {
         return (
@@ -63,7 +71,7 @@ const Home = () => {
             <div className="p-6 md:p-8 pb-32">
                 {/* Header greeting */}
                 <h1 className="text-3xl md:text-4xl font-display font-bold mb-8 animate-fade-in">
-                    {getGreeting()}, <span className="gradient-text capitalize">{userName}</span>
+                    {getGreeting()}, <span className="gradient-text capitalize">{user?.displayName || user?.user?.displayName || user?.email?.split('@')[0] || 'Music Lover'}</span>
                 </h1>
 
                 {/* Trending Now */}
@@ -80,6 +88,7 @@ const Home = () => {
                                 key={item.id || index}
                                 className="group cursor-pointer animate-fade-in"
                                 style={{ animationDelay: `${index * 0.05}s` }}
+                                onClick={() => playSong(item)}
                             >
                                 <div className="relative mb-4 overflow-hidden rounded-xl shadow-lg">
                                     <div
@@ -91,12 +100,15 @@ const Home = () => {
                                         }}
                                     />
                                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                    <div className="absolute bottom-3 right-3 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                                    <div
+                                        className="absolute bottom-3 right-3 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75 hover:scale-110"
+                                        onClick={(e) => handlePlay(item, e)}
+                                    >
                                         <Play className="w-5 h-5 text-white ml-1" fill="white" />
                                     </div>
                                 </div>
                                 <h3 className="font-semibold truncate text-foreground group-hover:text-primary transition-colors">{item.title}</h3>
-                                <p className="text-sm text-muted-foreground truncate">{item.artist}</p>
+                                <p className="text-sm text-muted-foreground truncate">{item.artist?.name || 'Unknown Artist'}</p>
                             </div>
                         )) : <p>No trending music found.</p>}
                     </div>
@@ -116,6 +128,7 @@ const Home = () => {
                                 key={item.id || index}
                                 className="group cursor-pointer animate-fade-in"
                                 style={{ animationDelay: `${index * 0.05}s` }}
+                                onClick={() => playSong(item)}
                             >
                                 <div className="relative mb-4">
                                     <div
@@ -125,12 +138,15 @@ const Home = () => {
                                             backgroundSize: 'cover'
                                         }}
                                     />
-                                    <div className="absolute bottom-2 right-2 w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all">
+                                    <div
+                                        className="absolute bottom-2 right-2 w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all hover:scale-110"
+                                        onClick={(e) => handlePlay(item, e)}
+                                    >
                                         <Play className="w-6 h-6 text-white ml-0.5" fill="white" />
                                     </div>
                                 </div>
                                 <h3 className="font-semibold truncate">{item.title}</h3>
-                                <p className="text-sm text-muted-foreground truncate">{item.artist}</p>
+                                <p className="text-sm text-muted-foreground truncate">{item.artist?.name || 'Unknown Artist'}</p>
                             </div>
                         )) : <p>No new releases found.</p>}
                     </div>

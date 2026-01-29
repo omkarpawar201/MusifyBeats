@@ -1,10 +1,10 @@
 package com.musifybeats.auth.repository;
 
+import com.musifybeats.auth.beans.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.musifybeats.auth.beans.User;
+import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-
-    User findByEmail(String email);
+	Optional<User> findByEmail(String email);
 }

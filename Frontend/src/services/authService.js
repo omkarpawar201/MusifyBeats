@@ -1,32 +1,34 @@
 import { authApi } from './api';
+import { jwtDecode } from "jwt-decode";
 
 export const authService = {
     login: async (email, password) => {
         try {
             const response = await authApi.post('/login', { email, password });
+
+            // Backend returns: { token, ... }
             if (response.data.token) {
                 localStorage.setItem('jwt_token', response.data.token);
-                localStorage.setItem('user', JSON.stringify(response.data.user));
+
+                // Decode token to get role reliably
+                const decoded = jwtDecode(response.data.token);
+                const role = decoded.role || "user";
+                const userEmail = decoded.sub || email;
+
+                // Construct user object
+                const userObj = {
+                    email: userEmail,
+                    role: role
+                };
+
+                localStorage.setItem('user', JSON.stringify(userObj));
+
+                return { token: response.data.token, user: userObj };
             }
             return response.data;
         } catch (error) {
-            console.warn("Login API failed, using fallback mock authentication", error);
-            // Fallback mock logic
-            const mockToken = "mock-jwt-token-12345";
-            const mockUser = {
-                id: "user-1",
-                email: email,
-                displayName: "Demo User",
-                role: "USER"
-            };
-
-            // Simulate network delay
-            await new Promise(resolve => setTimeout(resolve, 800));
-
-            localStorage.setItem('jwt_token', mockToken);
-            localStorage.setItem('user', JSON.stringify(mockUser));
-
-            return { token: mockToken, user: mockUser };
+            console.error("Login API failed", error);
+            throw error;
         }
     },
 
@@ -35,13 +37,8 @@ export const authService = {
             const response = await authApi.post('/register', { email, password, displayName });
             return response.data;
         } catch (error) {
-            console.warn("Register API failed, using fallback mock authentication", error);
-
-            // Simulate network delay
-            await new Promise(resolve => setTimeout(resolve, 800));
-
-            // Return success message
-            return { message: "User registered successfully (Mock)" };
+            console.error("Register API failed", error);
+            throw error;
         }
     },
 

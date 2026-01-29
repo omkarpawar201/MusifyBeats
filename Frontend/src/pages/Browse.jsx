@@ -38,6 +38,7 @@ const Browse = () => {
                         {genres.map((genre) => (
                             <div
                                 key={genre.title}
+                                onClick={() => navigate(`/search?q=${encodeURIComponent(genre.title)}`)}
                                 className={`aspect-square rounded-2xl p-5 relative overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl ${genre.color}`}
                             >
                                 <span className="text-2xl font-bold text-white absolute top-4 left-4 drop-shadow-md">

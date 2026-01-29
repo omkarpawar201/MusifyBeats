@@ -4,24 +4,28 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MusicService.Data;
+using MusicService.Services;
+using System.Text.Json.Serialization;
 
 namespace MusicService
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            var jwtSecret = "musifybeats-super-secret-key-256-bit-length-123456";
+            var jwtSecret = builder.Configuration["Jwt:Secret"];
 
             // AUTHENTICATION (THIS LINE WAS MISSING PROPERLY)
             builder.Services
                 .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
+                    options.MapInboundClaims = false;
+
                     options.TokenValidationParameters = new TokenValidationParameters
-                    {
+                    {   
                         ValidateIssuer = false,
                         ValidateAudience = false,
                         ValidateLifetime = true,
@@ -31,7 +35,8 @@ namespace MusicService
                         ),
                         ClockSkew = TimeSpan.Zero,
 
-                        RoleClaimType = "role"
+                        RoleClaimType = "role",
+                        NameClaimType = "sub"
                     };
                 });
 
@@ -68,7 +73,8 @@ namespace MusicService
     });
             });
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
@@ -76,8 +82,45 @@ namespace MusicService
                 )
             );
 
+            // Register DatabaseSeeder
+            builder.Services.AddScoped<DatabaseSeeder>();
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
 
             var app = builder.Build();
+
+            // Seed database
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetRequiredService<AppDbContext>();
+                    context.Database.Migrate(); // Apply migrations
+                    
+                    var seeder = services.GetRequiredService<DatabaseSeeder>();
+                    await seeder.SeedAsync();
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred while seeding the database.");
+                }
+            }
+
+            app.UseCors("AllowAll");
+
+            // Enable static file serving for uploads
+            app.UseStaticFiles();
 
             if (app.Environment.IsDevelopment())
             {

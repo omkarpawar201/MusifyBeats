@@ -6,6 +6,7 @@ import { Search as SearchIcon, Play, Clock, X, Loader2 } from "lucide-react";
 import { authService } from "@/services/authService";
 import { musicService } from "@/services/musicService";
 import { mockSongs, mockArtists } from "@/lib/mockData";
+import { usePlayer } from "@/context/PlayerContext";
 
 const Search = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -16,6 +17,7 @@ const Search = () => {
     const [results, setResults] = useState({ songs: [], artists: [] });
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const { playSong } = usePlayer();
 
     useEffect(() => {
         if (!authService.isAuthenticated()) {
@@ -60,6 +62,11 @@ const Search = () => {
 
     const removeRecentSearch = (searchTerm) => {
         setRecentSearches(prev => prev.filter(s => s !== searchTerm));
+    };
+
+    const handlePlay = (song, event) => {
+        if (event) event.stopPropagation();
+        playSong(song);
     };
 
     const hasQuery = query.trim().length > 0;
@@ -168,6 +175,7 @@ const Search = () => {
                                                     key={song.id || index}
                                                     className="flex items-center gap-4 p-3 rounded-lg hover:bg-muted/50 transition-colors group cursor-pointer animate-fade-in"
                                                     style={{ animationDelay: `${index * 0.03}s` }}
+                                                    onClick={() => handlePlay(song)}
                                                 >
                                                     <div className="relative">
                                                         <div

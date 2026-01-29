@@ -12,8 +12,28 @@ import {
     Compass,
 } from "lucide-react";
 
+import { useState, useEffect } from "react";
+import { musicService } from "@/services/musicService";
+import { authService } from "@/services/authService";
+
 const Sidebar = ({ collapsed, onToggle, className, isMobile }) => {
     const location = useLocation();
+    const [playlists, setPlaylists] = useState([]);
+
+    useEffect(() => {
+        if (authService.isAuthenticated()) {
+            fetchPlaylists();
+        }
+    }, [location.pathname]); // Re-fetch on navigate roughly
+
+    const fetchPlaylists = async () => {
+        try {
+            const data = await musicService.getMyPlaylists();
+            setPlaylists(data || []);
+        } catch (error) {
+            console.error("Sidebar playlist fetch failed", error);
+        }
+    };
 
     const navItems = [
         { icon: Home, label: "Home", href: "/home" },
@@ -23,8 +43,8 @@ const Sidebar = ({ collapsed, onToggle, className, isMobile }) => {
     ];
 
     const playlistItems = [
-        { icon: PlusSquare, label: "Create Playlist", href: "/playlist/create" },
-        { icon: Heart, label: "Liked Songs", href: "/liked" },
+        { icon: PlusSquare, label: "Create Playlist", href: "/library", id: "create-playlist" },
+        { icon: Heart, label: "Liked Songs", href: "/library", id: "liked-songs" },
     ];
 
     return (
@@ -78,7 +98,7 @@ const Sidebar = ({ collapsed, onToggle, className, isMobile }) => {
                     {playlistItems.map((item) => {
                         const isActive = location.pathname === item.href;
                         return (
-                            <li key={item.href}>
+                            <li key={item.id || item.href}>
                                 <Link
                                     to={item.href}
                                     className={cn(
@@ -103,7 +123,7 @@ const Sidebar = ({ collapsed, onToggle, className, isMobile }) => {
                             Your Playlists
                         </h3>
                         <ul className="space-y-1 max-h-48 overflow-y-auto custom-scrollbar">
-                            {mockPlaylists.map((playlist) => (
+                            {playlists.map((playlist) => (
                                 <li key={playlist.id}>
                                     <Link
                                         to={`/playlist/${playlist.id}`}
@@ -132,13 +152,5 @@ const Sidebar = ({ collapsed, onToggle, className, isMobile }) => {
         </aside>
     );
 };
-
-const mockPlaylists = [
-    { id: "1", name: "Chill Vibes" },
-    { id: "2", name: "Workout Mix" },
-    { id: "3", name: "Focus Flow" },
-    { id: "4", name: "Party Mode" },
-    { id: "5", name: "Late Night" },
-];
 
 export default Sidebar;

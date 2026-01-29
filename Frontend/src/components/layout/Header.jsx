@@ -109,10 +109,6 @@ const Header = ({ onMenuToggle }) => {
                                 <User className="w-4 h-4 mr-2" />
                                 Profile
                             </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => navigate("/settings")}>
-                                <Settings className="w-4 h-4 mr-2" />
-                                Settings
-                            </DropdownMenuItem>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem onClick={handleSignOut} className="text-destructive focus:text-destructive">
                                 <LogOut className="w-4 h-4 mr-2" />
