@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Chat Widget",
+  "description": "A sleek, modern React application featuring a floating chat widget integrated with Google's Gemini API for real-time conversational assistance.",
+  "requestFramePermissions": []
+}
