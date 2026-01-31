@@ -370,22 +370,6 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 👥 Authors
-
-- Your Name - Initial work
-
-## 🙏 Acknowledgments
-
-- Spring Boot community
-- ASP.NET Core team
-- React and Vite communities
-- All open-source contributors
-
-## 📞 Support
 
 For support, email support@musifybeats.com or open an issue in the repository.
 
