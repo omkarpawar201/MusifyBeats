@@ -371,8 +371,6 @@ Contributions are welcome! Please follow these steps:
 5. Open a Pull Request
 
 
-For support, email support@musifybeats.com or open an issue in the repository.
-
 ---
 
 <p align="center">Made with ❤️ by the MusifyBeats Team</p>
